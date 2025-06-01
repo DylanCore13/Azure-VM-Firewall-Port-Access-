@@ -58,6 +58,10 @@
     - Administrator account: Username: AzureAdmin, create a strong password (write it down!).
     - Inbound port rules: Select Allow selected ports, check RDP (3389).
     - "Review + create" -> "Create".
+ 
+![image](https://github.com/user-attachments/assets/a745996a-235d-409d-992d-4d3de9d3a30f)
+
+
  - After you create it wait for deployment to complete.
     - Connect to your Azure VM via remote desktop connection:
     - Open the file, enter AzureAdmin username and your password. You should be on the VM's desktop.
