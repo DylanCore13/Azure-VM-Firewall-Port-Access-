@@ -66,6 +66,11 @@
     - Connect to your Azure VM via remote desktop connection:
     - Open the file, enter AzureAdmin username and your password. You should be on the VM's desktop.
 
+![image](https://github.com/user-attachments/assets/12794754-0fff-42c5-ab3a-3ee2ba2866b4)
+
+
+
+
 
 <h2>Part 2: Configure and Troubleshoot Firewall Rules</h2>
 
