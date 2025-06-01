@@ -78,14 +78,16 @@
       - Open Control Panel, click on uninstall program under "Programs"
       - click on "Turn Windows features on or off".
 
-<b>
 
 
-        ![image](https://github.com/user-attachments/assets/5c192a9b-ce65-4b0d-a462-c28f1958fdb9)
+
+  ![image](https://github.com/user-attachments/assets/5c192a9b-ce65-4b0d-a462-c28f1958fdb9)
+    
+        
    
-        ![image](https://github.com/user-attachments/assets/d3a2cdd6-6d05-4aa9-8605-0d2a5b2d9607)
+   ![image](https://github.com/user-attachments/assets/d3a2cdd6-6d05-4aa9-8605-0d2a5b2d9607)
 
- <b/>
+ 
 
  
  - Find and check "Internet Information Services". Click "OK". Let it install.
