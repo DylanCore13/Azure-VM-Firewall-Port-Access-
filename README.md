@@ -66,7 +66,7 @@
           
      
  - Find and check "Internet Information Services". Click "OK". Let it install.
- - Open a browser inside the VM and go to http://localhost. You should see the default IIS welcome page. This confirms IIS is running locally.
+ - Open a browser inside the VM and go to http://locahost. You should see the default IIS welcome page. This confirms IIS is running locally.
  - Troubleshoot External Access (Expected Failure - Firewall Blocked):
 
  - On your host machine (your local computer, not the VM), open a web browser.
