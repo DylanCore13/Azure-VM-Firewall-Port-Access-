@@ -107,14 +107,23 @@
 ![image](https://github.com/user-attachments/assets/dcdafe6d-d9f3-4685-a0c5-6d1f44c998a6)
 
 
-- Expected Result: It will likely time out or show "This site can't be reached" (unless RDP somehow opened port 80 by default, which is unlikely for a client OS, or if a Windows Server image has stricter default rules). This is because port 80 is blocked by Azure's Network Security Group (NSG) by default. Take a screenshot of this failed attempt on your host machine.
-Configure Azure Network Security Group (NSG) to Allow Access:
+- Expected Result: It will likely time out or show "This site can't be reached" (unless RDP somehow opened port 80 by default, which is unlikely for a client OS, or if a Windows Server image has stricter default rules). This is because port 80 is blocked by Azure's Network Security Group (NSG) by default. What were going to do now is configure Azure Network Security Group (NSG) to Allow Access
 
 
 
 On your host machine, in the Azure Portal go to your HelpDeskVM resource. Then in the left-hand menu, under "Networking", click "Networking".
 
+![image](https://github.com/user-attachments/assets/f582805c-3136-4cb2-a198-3f439f225ab3)
+
+
+
 - You'll see the Network Security Group (NSG) associated with your VM. Click on its name (e.g., HelpDeskVM-nsg).
+
+
+![image](https://github.com/user-attachments/assets/59c35117-471a-476f-975a-7390a2502eae)
+
+
+
 - In the NSG blade, under "Settings", click "Inbound security rules".
    - Click "+ Add".
    - Source: Any (for simplicity; in production, you'd specify an IP range).
@@ -127,10 +136,14 @@ On your host machine, in the Azure Portal go to your HelpDeskVM resource. Then i
    - Name: AllowHTTP (or AllowPort80)
    - Click "Add".
 
-- Wait a moment for the rule to deploy. Take a screenshot of the NSG inbound rules list with your new rule added.
-Test External Access Again:
+
+![image](https://github.com/user-attachments/assets/8a8d8a6a-b576-4358-bdb2-e62f592a09f0)
+
 
 On your host machine, open a web browser.
 Go to http://<YOUR_VM_PUBLIC_IP_ADDRESS>.
-Expected Result: You should now see the default IIS welcome page! This confirms the NSG rule is working. Take a screenshot of this successful access. 
+Expected Result: You should now see the default IIS welcome page! This confirms the NSG rule is working. Take a screenshot of this successful access. :)
+
+
+![image](https://github.com/user-attachments/assets/4c82677f-cc30-477a-af15-f420a6233161)
 
