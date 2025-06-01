@@ -59,38 +59,44 @@
 
 <h2>Part 2: Configure and Troubleshoot Firewall Rules</h2>
 
+   - Inside your HelpDeskVM install a simple web server: We'll use IIS (Internet Information Services) as a simple example.
+      - Right-click Start "Apps and Features" "Optional features"  "More Windows features" (or "Turn Windows features on or off").
+           
+           
+          
+     
+ - Find and check "Internet Information Services". Click "OK". Let it install.
+ - Open a browser inside the VM and go to http://localhost. You should see the default IIS welcome page. This confirms IIS is running locally.
+ - Troubleshoot External Access (Expected Failure - Firewall Blocked):
 
-     - Inside your HelpDeskVM install a simple web server: We'll use IIS (Internet Information Services) as a simple example.
-          - Right-click Start -> "Apps and Features" -> "Optional features" -> "More Windows features" (or "Turn Windows features on or off").
-Find and check "Internet Information Services". Click "OK". Let it install.
-Open a browser inside the VM and go to http://localhost. You should see the default IIS welcome page. This confirms IIS is running locally.
-Troubleshoot External Access (Expected Failure - Firewall Blocked):
+ - On your host machine (your local computer, not the VM), open a web browser.
+ - Find your VM's Public IP address in the Azure Portal (on the HelpDeskVM Overview blade).
+ - Try to access the web server: http://<YOUR_VM_PUBLIC_IP_ADDRESS>.
 
-On your host machine (your local computer, not the VM), open a web browser.
-Find your VM's Public IP address in the Azure Portal (on the HelpDeskVM Overview blade).
-Try to access the web server: http://<YOUR_VM_PUBLIC_IP_ADDRESS>.
-Expected Result: It will likely time out or show "This site can't be reached" (unless RDP somehow opened port 80 by default, which is unlikely for a client OS, or if a Windows Server image has stricter default rules). This is because port 80 is blocked by Azure's Network Security Group (NSG) by default. Take a screenshot of this failed attempt on your host machine.
+- Expected Result: It will likely time out or show "This site can't be reached" (unless RDP somehow opened port 80 by default, which is unlikely for a client OS, or if a Windows Server image has stricter default rules). This is because port 80 is blocked by Azure's Network Security Group (NSG) by default. Take a screenshot of this failed attempt on your host machine.
 Configure Azure Network Security Group (NSG) to Allow Access:
 
-On your host machine, in the Azure Portal:
-Go to your HelpDeskVM resource.
-In the left-hand menu, under "Networking", click "Networking".
-You'll see the Network Security Group (NSG) associated with your VM. Click on its name (e.g., HelpDeskVM-nsg).
-In the NSG blade, under "Settings", click "Inbound security rules".
-Click "+ Add".
-Source: Any (for simplicity; in production, you'd specify an IP range).
-Source port ranges: *
-Destination: Any
-Destination port ranges: 80 (This is the standard HTTP port for web servers).
-Protocol: TCP
-Action: Allow
-Priority: Choose a number lower than 65500 (e.g., 100). Lower numbers are higher priority.
-Name: AllowHTTP (or AllowPort80)
-Click "Add".
-Wait a moment for the rule to deploy. Take a screenshot of the NSG inbound rules list with your new rule added.
+
+
+On your host machine, in the Azure Portal go to your HelpDeskVM resource. Then in the left-hand menu, under "Networking", click "Networking".
+
+- You'll see the Network Security Group (NSG) associated with your VM. Click on its name (e.g., HelpDeskVM-nsg).
+- In the NSG blade, under "Settings", click "Inbound security rules".
+   - Click "+ Add".
+   - Source: Any (for simplicity; in production, you'd specify an IP range).
+   - Source port ranges: *
+   - Destination: Any
+   - Destination port ranges: 80 (This is the standard HTTP port for web servers).
+   - Protocol: TCP
+   - Action: Allow
+   - Priority: Choose a number lower than 65500 (e.g., 100). Lower numbers are higher priority.
+   - Name: AllowHTTP (or AllowPort80)
+   - Click "Add".
+
+- Wait a moment for the rule to deploy. Take a screenshot of the NSG inbound rules list with your new rule added.
 Test External Access Again:
 
 On your host machine, open a web browser.
 Go to http://<YOUR_VM_PUBLIC_IP_ADDRESS>.
-Expected Result: You should now see the default IIS welcome page! This confirms the NSG rule is working. Take a screenshot of this successful access.
+Expected Result: You should now see the default IIS welcome page! This confirms the NSG rule is working. Take a screenshot of this successful access. 
 
