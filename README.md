@@ -14,14 +14,16 @@
 
 
 
-Networking Fundamentals: Shows understanding of basic firewall concepts and port numbers.
-Common Request: Users frequently need specific ports opened for applications.
-Troubleshooting: Demonstrates diagnosing network connectivity issues.
-Azure VM Networking: Practical experience with Azure Network Security Groups (NSGs).
-Cost-Effective: Uses a small Azure VM and minimal other services.
-Azure Services Used:
+- Networking Fundamentals: Shows understanding of basic firewall concepts and port numbers.
+- Common Request: Users frequently need specific ports opened for applications.
+- Troubleshooting: Demonstrates diagnosing network connectivity issues.
+- Azure VM Networking: Practical experience with Azure Network Security Groups (NSGs).
+- Cost-Effective: Uses a small Azure VM and minimal other services.
 
-Azure Virtual Machine (VM): A Windows VM to simulate a user's machine.
-Azure Network Security Group (NSG): The Azure-level firewall for the VM.
-Azure Resource Groups: For organization.
-GitHub Repository Structure:
+
+<h2>Azure Services Used: </h2>
+
+- Azure Virtual Machine (VM): A Windows VM to simulate a user's machine.
+- Azure Network Security Group (NSG): The Azure-level firewall for the VM.
+- Azure Resource Groups: For organization.
+
