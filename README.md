@@ -100,6 +100,13 @@
  - Find your VM's Public IP address in the Azure Portal (on the HelpDeskVM Overview blade).
  - Try to access the web server: http://<YOUR_VM_PUBLIC_IP_ADDRESS>.
 
+
+
+![image](https://github.com/user-attachments/assets/2ed3ccbc-ab68-47da-a189-538472c05cdc)
+
+![image](https://github.com/user-attachments/assets/dcdafe6d-d9f3-4685-a0c5-6d1f44c998a6)
+
+
 - Expected Result: It will likely time out or show "This site can't be reached" (unless RDP somehow opened port 80 by default, which is unlikely for a client OS, or if a Windows Server image has stricter default rules). This is because port 80 is blocked by Azure's Network Security Group (NSG) by default. Take a screenshot of this failed attempt on your host machine.
 Configure Azure Network Security Group (NSG) to Allow Access:
 
