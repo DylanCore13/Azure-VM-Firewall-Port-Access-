@@ -92,7 +92,9 @@
  
  - Find and check "Internet Information Services". Click "OK". Let it install.
  - Open a browser inside the VM and go to http://locahost. You should see the default IIS welcome page. This confirms IIS is running locally.
- - Troubleshoot External Access (Expected Failure - Firewall Blocked):
+
+![image](https://github.com/user-attachments/assets/ca3868bc-a205-4687-8d48-1747e194d517)
+
 
  - On your host machine (your local computer, not the VM), open a web browser.
  - Find your VM's Public IP address in the Azure Portal (on the HelpDeskVM Overview blade).
