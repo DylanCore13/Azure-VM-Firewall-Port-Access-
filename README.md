@@ -42,6 +42,12 @@
     - Resource group name: HelpDeskVMRG
     - Region: Choose a region close to you (e.g., East US).
     - "Review + create" -> "Create".
+ 
+![image](https://github.com/user-attachments/assets/60226cc1-26fe-41e8-b035-2a8fef477c02)
+
+
+
+
 - Create a Windows Virtual Machine (VM): HelpDeskVM
     - Search for "Virtual machines" -> "+ Create" -> "Azure virtual machine".
     - Resource group: HelpDeskVMRG
